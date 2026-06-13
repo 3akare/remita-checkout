@@ -240,12 +240,8 @@
                                 min="0.01"
                                 class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all bg-gray-50"
                                 required
-                                oninput="document.getElementById('kobo-amount').textContent = Math.round((this.value || 0) * 100).toLocaleString()"
                             />
                         </div>
-                        <p class="mt-1 text-xs text-gray-500">
-                            Payment will be processed in Kobo: <span class="font-bold text-orange-500"><span id="kobo-amount">100,000</span> Kobo</span>
-                        </p>
                     </div>
 
                     <button
@@ -543,7 +539,7 @@
                     paymentChannel: "CARD", // Required by PaymentEngineController
                     
                     // Explicitly instruct the UI to show the Card channel
-                    channels: ["CARD", "BANK", "USSD", "WALLET"],
+                    channels: "CARD,BANK,USSD,WALLET",
 
                     // To test against your local payment-engine core, set the host
                     // config: {
