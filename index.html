@@ -7,9 +7,7 @@
         <!-- Tailwind CSS for styling -->
         <script src="https://cdn.tailwindcss.com"></script>
         <!-- Remita Sandbox SDK Script (Step 1) -->
-        <script async
- src=" https://js.remita.net/js/payment-checkout.js">
-</script>
+        <script async src="https://js.remita.net/js/payment-checkout.js"></script>
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
@@ -533,6 +531,12 @@
                     narration: narration,
                     currency: "NGN",
                     paymentIdentifier: transactionRef,
+                    paymentChannel: "CARD", // Required by PaymentEngineController
+
+                    // To test against your local payment-engine core, set the host
+                    // config: {
+                    //    host: "http://localhost:8080" // or your payment-engine URL
+                    // },
 
                     onSuccess: function (response) {
                         console.log("callback Successful Response", response);
